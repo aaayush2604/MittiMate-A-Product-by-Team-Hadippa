@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="valueForm">
+        <input type="text" name="Nitrogen" id="Nitrogen">
+        <input type="text" name="Phosphorus" id="Phosphorus">
+        <input type="text" name="Potassium" id="Potassium">
+        <input type="text" name="pH" id="pH">
+        <input type="text" name="Rainfall" id="Rainfall">
+        <input type="text" name="Temperature" id="Temperature">
+        <input type="submit" id="SubmitBtn">
+    </form>
+    <script>
+        const getOutput=async (input)=>{
+            const url = 'http://127.0.0.1:5000/predict'; 
+            try {
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'  // Indicates the format of the data being sent
+                },
+                body: JSON.stringify({'inputs':input})  // Convert the data object to a JSON string
+            })
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            const result = await response.json();
+            return result.prediction;
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+
+        const btn=document.getElementById('SubmitBtn');
+        btn.addEventListener('click',async (e)=>{
+            e.preventDefault()
+            const Nitrogen=document.getElementById("Nitrogen").value
+            const Phosphorus=document.getElementById("Phosphorus").value
+            const Potassium=document.getElementById("Potassium").value
+            const pH=document.getElementById("pH").value
+            const Rainfall=document.getElementById("Rainfall").value
+            const Temperature=document.getElementById("Temperature").value
+            const arr=[Nitrogen,Phosphorus,Potassium,pH,Rainfall,Temperature]
+
+
+            const output=await getOutput(arr)
+            console.log(output)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+y=model.predict(X_scaled)

@@ -1,0 +1,12 @@
+District_Name,Soil_color,Nitrogen,Phosphorus,Potassium,pH,Rainfall,Temperature,Crop,Fertilizer
+North,Red,30,15,20,6.5,120,25,Wheat,10:10:10 NPK
+South,Black,20,10,15,6,100,22,Cotton,12:32:16 NPK
+East,Yellow,25,12,18,6.2,110,23,Cotton,18:46:00 NPK
+West,Green,28,14,22,6.8,130,24,Cotton,19:19:19 NPK
+North,Red,22,11,17,6.4,115,21,Cotton,20:20:20 NPK
+South,Black,35,18,25,6.7,125,26,Urad,50:26:26 NPK
+East,Yellow,27,13,19,6.1,105,22,Ginger,Ammonium Sulphate
+West,Green,23,10,16,6.3,110,20,Sugarcane,Chilated Micronutrient
+North,Red,31,16,21,6.6,130,25,Cotton,DAP
+South,Black,24,12,18,6.5,120,23,Rice,Ferrous Sulphate
+East,Yellow,26,14,20,6,100,21,Groundnut,Hydrated Lime
